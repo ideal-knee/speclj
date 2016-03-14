@@ -1,5 +1,6 @@
 (ns leiningen.spec
   (:require [leiningen.core.eval :refer [eval-in-project]]
+            [leiningen.core.project :refer [merge-profiles]]
             [leiningen.core.main :as main]))
 
 (defn make-run-form [project speclj-args]
@@ -36,7 +37,9 @@ documentation, as opposed to this message provided by Leiningen, try this:
 
 That ought to do the trick."
   [project & args]
-  (let [project (assoc project :eval-in (get project :speclj-eval-in :subprocess))
+  (let [project (-> project
+                    (assoc :eval-in (get project :speclj-eval-in :subprocess))
+                    (merge-profiles [:spec]))
         speclj-args (build-args project args)
         run-form (make-run-form project speclj-args)
         init-form '(require 'speclj.cli)]

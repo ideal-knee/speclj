@@ -36,6 +36,16 @@ Include speclj in your `:dev` profile `:dependencies` and`:plugins`. Then change
 :test-paths ["spec"]
 ```
 
+### `spec` Profile
+
+You can specify a `:spec` profile for testing-specific configuration.  E.g. for [Environ](https://github.com/weavejester/environ):
+
+```
+; - snip
+:profiles {:dev {:env {:database-url "<dev-db-url>"}}
+           :spec {:env {:database-url "<spec-db-url>"}}}
+```
+
 ## Manual installation
 
 1. Check out the source code: [https://github.com/slagyr/speclj](https://github.com/slagyr/speclj)

@@ -1,6 +1,6 @@
-(defproject speclj "3.3.1"
+(defproject org.clojars.ideal-knee/speclj "3.3.2-SNAPSHOT"
             :description "speclj: Pronounced 'speckle', is a Behavior Driven Development framework for Clojure."
-            :url "http://speclj.com"
+            :url "https://github.com/ideal-knee/speclj"
             :license {:name         "The MIT License"
                       :url          "file://LICENSE"
                       :distribution :repo
